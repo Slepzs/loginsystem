@@ -55,7 +55,6 @@ function login($conn) {
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
-      echo $row['pwd'];
       $hash = $row['pwd'];
       if(password_verify($pwd, $hash)) {
         $_SESSION['u_id'] = $row['id'];
